@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package say;
+
+option go_package = "./pb";
+
+service TextToSpeech {
+  rpc Say(Text) returns (Speech) {}
+}
+
+message Text {
+  string text = 1;
+}
+message Speech {
+  bytes Audio = 1;
+}
